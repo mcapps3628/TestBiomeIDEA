@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "testbiomeidea",
+  "version": "${version}",
+  "name": "TestBiomeIDEA",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/testbiomeidea/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "nighthawk.testbiomeidea.client.TestbiomeideaDataGenerator"
+    ],
+    "client": [
+      "nighthawk.testbiomeidea.client.TestbiomeideaClient"
+    ],
+    "main": [
+      "nighthawk.testbiomeidea.Testbiomeidea"
+    ]
+  },
+  "mixins": [
+    "testbiomeidea.mixins.json",
+    {
+      "config": "testbiomeidea.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
